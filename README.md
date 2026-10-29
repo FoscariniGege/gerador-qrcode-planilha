@@ -29,7 +29,7 @@ Em rotinas operacionais e administrativas, gerar dezenas ou centenas de QR Codes
 ## 🚀 Como Executar o Projeto
 
 ### Pré-requisitos
-* [Listar versão da linguagem e dependências necessárias]
+* Copiar o codigo e colar no Coolab
 
 ### Passo a Passo
 
