@@ -1,38 +1,18 @@
-# 📱 Automação: Gerador de QR Codes a partir de Planilhas
+# 🏷️ Gerador de Etiquetas Térmicas com QR Code (Padrão Argox / WMS)
 
-Ferramenta de automação desenvolvida para ler dados estruturados em planilhas e gerar múltiplos **QR Codes** de forma dinâmica e padronizada. O projeto elimina o trabalho manual de criar códigos individualmente, otimizando rotinas de identificação de itens, catalogação, logística e controle operacional.
-
----
-
-## 🎯 Problema Resolvido
-
-Em rotinas operacionais e administrativas, gerar dezenas ou centenas de QR Codes manualmente a partir de cadastros em planilhas é um processo lento e sujeito a erros de digitação. Este script automatiza a leitura linha a linha e exporta os arquivos prontos para uso ou impressão em segundos.
+Automação em Python (desenvolvida para Google Colab) que lê planilhas de endereçamento e produtos do **Google Drive**, gera **QR Codes** dinâmicos para cada registro e compila um arquivo **PDF diagramado milimetricamente para impressoras térmicas Argox (101,6 mm x 25,4 mm)**.
 
 ---
 
-## ⚙️ Como Funciona o Fluxo
+## 🎯 Problema de Negócio Resolvido
 
-1. **Entrada de Dados:** O sistema lê o arquivo de planilha contendo os registros (ID, descrição, URL ou metadados).
-2. **Processamento:** Para cada linha válida, o algoritmo formata o conteúdo e renderiza o QR Code correspondente.
-3. **Exportação:** As imagens geradas são salvas automaticamente no diretório de saída com nomenclatura padronizada a partir dos dados da própria planilha.
+Em operações de estoque e **WMS (Warehouse Management System)**, a criação manual de etiquetas de endereçamento, prateleiras ou SKUs a partir de planilhas consome horas de trabalho e frequentemente gera erros de formatação na impressora térmica.
 
----
-
-## 🛠️ Tecnologias Utilizadas
-
-* **Linguagem:** [Ex: Python / Java / JavaScript - Google Apps Script]
-* **Bibliotecas / Recursos:** [Ex: Pandas / OpenPyXL / qrcode / API de geração]
-* **Ambiente:** VS Code / GitHub Codespaces
+Este script automatiza todo o fluxo: lê os códigos diretamente da planilha no Google Drive, renderiza os QR Codes com margem otimizada, posiciona o código legível ao lado e entrega o PDF pronto para envio direto à fila de impressão térmica.
 
 ---
 
-## 🚀 Como Executar o Projeto
+## ⚡ Destaques Técnicos da Solução
 
-### Pré-requisitos
-* Copiar o codigo e colar no Coolab
-
-### Passo a Passo
-
-1. **Clone o repositório:**
-   ```bash
-   git clone [https://github.com/FoscariniGege/TransformandoUmaPlanilhaComDadosEmQrCodes.git](https://github.com/FoscariniGege/gerador-qrcode-planilha.git)
+* **Diagramação Milimétrica para Hardware (`ReportLab`):** Canvas configurado nas dimensões exatas de etiquetas térmicas padrão 4"x1" (`101.6 mm` de largura por `25.4 mm` de altura), garantindo alinhamento preciso do sensor da impressora a cada avanço de página (`showPage()`).
+* **Controle de Layout e Tipografia:** Renderização do QR Code em proporção quadrada (`21.8 mm x 21.8 mm`) combinada com texto em `Helvetica-Bold
